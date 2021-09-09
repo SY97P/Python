@@ -1,0 +1,14 @@
+# low : 시작 인덱스
+# high : 끝 인덱스
+
+def binarySearch(lst, low, high, target) :
+	if low <= high :
+		mid = (low + high) // 2
+		if target < lst[mid] :
+			return binarySearch(lst, low, mid-1, target)
+		elif target > lst[mid] :
+			return binarySearch(lst, mid+1, high, target)
+		else :
+			return mid
+	else :
+		return -1
